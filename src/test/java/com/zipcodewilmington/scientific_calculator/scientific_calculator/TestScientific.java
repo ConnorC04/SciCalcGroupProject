@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientific_calculator;
+package com.zipcodewilmington.scientific_calculator.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.Scientific;
 import org.junit.jupiter.api.Test;
