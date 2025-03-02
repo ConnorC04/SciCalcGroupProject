@@ -21,4 +21,14 @@ public class TestScientific {
         boolean actual = Scientific.isRadianMode("anything else");
         assertTrue(actual);
     }
+
+    public void test1Input(){
+        boolean actual = Scientific.input().equalsIgnoreCase("radians");
+        assertTrue(actual);
+    }
+
+    public void test2Input(){
+        boolean actual = Scientific.input().equalsIgnoreCase("degrees");
+        assertTrue(actual);
+    }
 }
