@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Calculator {
     public static Scanner CalcScan = new Scanner(System.in);
 
+    //This is #6 - Memory
 
-
-    //This is #7
+    //This is #7 - Trigonometry
     //This is Sine
         public static double sin(double angle){
             return Math.sin(angle);
@@ -32,7 +32,7 @@ public class Calculator {
         return Math.atan(angle);
     }
 
-    //This is #9
+    //This is #9 - Logarithms
     //log
     public static double log(double num){
         return Math.log(num);
@@ -50,7 +50,7 @@ public class Calculator {
         return Math.exp(Math.log1p(num));
     }
 
-    //This is #11
+    //This is #11 - Factorial
     //Factoral
     public static int fact(double num){
             if (num < 0){
