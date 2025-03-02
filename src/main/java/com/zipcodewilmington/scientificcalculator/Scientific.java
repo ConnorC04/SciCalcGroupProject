@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientificcalculator;
 import java.util.Scanner;
+
 public class Scientific {
     // Declare a public Scanner object "scan" for reading user input
     public static Scanner scan = new Scanner(System.in);
@@ -11,8 +12,13 @@ public class Scientific {
     * but *if* the user wants to work in degrees, the method returns false.
     * Finally, *if* the user does not enter a proper mode, method will inform the user of the error and default to
     * radians mode. */
-    public static boolean isRadianMode(){
-        String userInput = scan.nextLine();
+
+    public static String input(){
+        System.out.println("To select which mode you would like to enter, please type \"radians\" or \"degrees\".");
+        return scan.nextLine();
+    }
+    public static boolean isRadianMode(String userInput){
+
         if (userInput.equalsIgnoreCase("radians")){
             return true;
         }else {
