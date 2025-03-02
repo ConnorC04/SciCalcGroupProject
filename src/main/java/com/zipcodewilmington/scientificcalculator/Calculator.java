@@ -29,24 +29,8 @@ public class Calculator {
 
         //11. Errors must be cleared before any other operation can take place *
 
-        public static void defaultValue(){
-            System.out.println("0");
-        }
 
-        public static void number1(){
-            double number1 = scan.nextDouble();
-        }
 
-        public static void number2(){
-        double number2 = scan.nextDouble();
-    }
-        public static double main(String[] args){
-            Scanner scan = new Scanner(System.in);
-            defaultValue();
-            System.out.println("Hello! Please enter the first number: ");
-            number1();
-            System.out.println("Please enter the second number: ");
-            number2();
 
 
 
