@@ -31,6 +31,7 @@ public class Calculator {
     public static double aTan(double angle){
         return Math.atan(angle);
     }
+
     //This is #9
     //log
     public static double log(double num){
@@ -47,6 +48,19 @@ public class Calculator {
     //inverse natural log
     public static double invLog1p(double num){
         return Math.exp(Math.log1p(num));
+    }
+
+    //This is #11
+    //Factoral
+    public static int fact(double num){
+            if (num < 0){
+                System.out.println("Error: Number must be positive");
+            }
+            int r = 1;
+            for(int i = 1; i <= num; i++){
+                r *= i;
+            }
+            return r;
     }
 
 
