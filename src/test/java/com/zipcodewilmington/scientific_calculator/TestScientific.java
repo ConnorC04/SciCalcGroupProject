@@ -4,6 +4,7 @@ import com.zipcodewilmington.scientificcalculator.Scientific;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 public class TestScientific {
     @Test
     public void test1isRadianMode(){
@@ -15,20 +16,31 @@ public class TestScientific {
         boolean actual = Scientific.isRadianMode("degrees");
         assertFalse(actual);
     }
+//Commented out, changed the exception handling block to the input function
+//    @Test
+//    public void test3isRadianMode(){
+//        boolean actual = Scientific.isRadianMode("anything else");
+//        assertTrue(actual);
+//    }
 
     @Test
-    public void test3isRadianMode(){
-        boolean actual = Scientific.isRadianMode("anything else");
-        assertTrue(actual);
-    }
-
     public void test1Input(){
-        boolean actual = Scientific.input().equalsIgnoreCase("radians");
-        assertTrue(actual);
+        String actual = "radians";
+        java.lang.String string1 = Scientific.modeInput(actual);
+        assertEquals(actual, string1);
     }
 
+    @Test
     public void test2Input(){
-        boolean actual = Scientific.input().equalsIgnoreCase("degrees");
-        assertTrue(actual);
+        String actual = "degrees";
+        java.lang.String string2 = Scientific.modeInput("Degrees");
+        assertEquals(actual, string2);
+    }
+
+    @Test
+    public void test3Input(){
+        String actual = "radians";
+        java.lang.String string3 = Scientific.modeInput("pickles");
+        assertEquals(actual, string3);
     }
 }

@@ -9,20 +9,17 @@ public class Scientific {
 
     /* Method prompts the user to input a string and returns exactly what the user typed
     * */
-    public static String input() {
-        System.out.println("To select which mode you would like to enter, please type \"radians\" or \"degrees\".");
-        String userInput = scan.nextLine();
-
-        switch(userInput){
-            case "radians":
-                return userInput;
-            case "degrees":
-                return userInput;
-            default:
-                throw new IllegalStateException("Unexpected value: " + userInput);
-        }
+    public static String modeInput(String userInput) {
+        switch (userInput) {
+                case "radians":
+                case "degrees":
+                    return userInput;
+                default:
+                    System.out.println("Invalid selection made, calculator is defaulting to radians mode.");
+                    return "radians";
+            }
     }
-// hope this works
+
     public static boolean isRadianMode(String userInput){
         return userInput.equalsIgnoreCase("radians");
     }
