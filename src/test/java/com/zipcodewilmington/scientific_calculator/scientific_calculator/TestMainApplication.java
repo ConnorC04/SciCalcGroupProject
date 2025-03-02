@@ -1,4 +1,4 @@
-package com.zipcodewilmington.scientific_calculator;
+package com.zipcodewilmington.scientific_calculator.scientific_calculator;
 
 /**
  * Created by leon on 2/9/18.
