@@ -44,6 +44,20 @@ public class TestScientific {
         java.lang.String string3 = Scientific.modeInput("pickles");
         assertEquals(actual, string3);
     }
+
+    @Test
+    public void testStoreMemory(){
+        double actual = 10.0;
+        double double1 = Scientific.storeCurrentValue(10.0);
+        assertEquals(actual, double1);
+    }
+    @Test
+    public void testClearMemory(){
+        double actual = 0;
+        double double1 = Scientific.clearStoredValue(10.0);
+        assertEquals(actual, double1);
+    }
+
 }
 
 

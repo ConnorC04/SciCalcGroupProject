@@ -38,6 +38,14 @@ public class Scientific {
         return angle;
     }
 
+    // Methods needed for Memory storage, clearing, and displaying.
+    public static double clearStoredValue(double d){
+        d = 0;
+        return d;
+    }
+    public static void displayStoredValue(double d){
+        System.out.println(storeCurrentValue(d));
+    }
     public static double storeCurrentValue(double d){
         return d;
     }
@@ -67,7 +75,7 @@ public class Scientific {
         return Math.atan(angle);
     }
 
-    //This is #9 - Logarithms
+
     //log
     public static double log(double num){
         return Math.log(num);
@@ -85,8 +93,7 @@ public class Scientific {
         return Math.exp(Math.log1p(num));
     }
 
-    //This is #11 - Factorial
-    //Factoral
+    //Factorial
     public static int fact(double num){
         if (num < 0){
             System.out.println("Error: Number must be positive");
