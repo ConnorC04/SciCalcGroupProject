@@ -4,10 +4,7 @@ import java.util.Scanner;
 public class Calculator {
     public static Scanner CalcScan = new Scanner(System.in);
 
-    //This is #6 - Memory
-        public static double memory(double num){
 
-        }
 
 
     //This is #7 - Trigonometry
