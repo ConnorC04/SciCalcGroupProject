@@ -22,7 +22,7 @@ public class Scientific {
                 throw new IllegalStateException("Unexpected value: " + userInput);
         }
     }
-
+// hope this works
     public static boolean isRadianMode(String userInput){
         return userInput.equalsIgnoreCase("radians");
     }
