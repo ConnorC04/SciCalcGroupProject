@@ -7,12 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestScientific {
     @Test
-    public void test1isRadianMode(){
+    public void test1isRadianMode() {
         boolean actual = Scientific.isRadianMode("radians");
         assertTrue(actual);
     }
+
     @Test
-    public void test2isRadianMode(){
+    public void test2isRadianMode() {
         boolean actual = Scientific.isRadianMode("degrees");
         assertFalse(actual);
     }
@@ -24,24 +25,25 @@ public class TestScientific {
 //    }
 
     @Test
-    public void test1Input(){
+    public void test1Input() {
         String actual = "radians";
         java.lang.String string1 = Scientific.modeInput(actual);
         assertEquals(actual, string1);
     }
 
     @Test
-    public void test2Input(){
+    public void test2Input() {
         String actual = "degrees";
         java.lang.String string2 = Scientific.modeInput("Degrees");
         assertEquals(actual, string2);
     }
 
     @Test
-    public void test3Input(){
+    public void test3Input() {
         String actual = "radians";
         java.lang.String string3 = Scientific.modeInput("pickles");
         assertEquals(actual, string3);
     }
+}
 
 
