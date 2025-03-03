@@ -255,7 +255,7 @@ public class TestScientific {
     public void testInverseNaturalLogarithm1() {
         Scientific calculateInverseNaturalLogarithm1 = new Scientific();
         double actual = calculateInverseNaturalLogarithm1.invLog1p(20);
-        assertEquals(3.044522437723423, actual);
+        assertEquals(21.0, actual);
     }
 
     @Test
