@@ -2,6 +2,7 @@ package com.zipcodewilmington.scientific_calculator.scientific_calculator;
 
 import com.zipcodewilmington.scientificcalculator.Scientific;
 import org.junit.jupiter.api.Test;
+import static java.lang.Float.NaN;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -142,6 +143,134 @@ public class TestScientific {
         assertEquals(0.4742822055086542, actual);
     }
 
+    @Test
+    public void testinverseCosine1() {
+        Scientific calculateinverseCosine1 = new Scientific();
+        double actual = calculateinverseCosine1.aCos(0.1);
+        assertEquals(1.4706289056333368, actual);
+    }
+
+    @Test
+    public void testinverseCosine2() {
+        Scientific calculateinverseCosine2 = new Scientific();
+        double actual = calculateinverseCosine2.aCos(-0.325);
+        assertEquals(1.9018080548841911, actual);
+    }
+
+    @Test
+    public void testinverseCosine3() {
+        Scientific calculateinverseCosine3 = new Scientific();
+        double actual = calculateinverseCosine3.aCos(0.4567);
+        assertEquals(1.0965141212862424, actual);
+    }
+
+    @Test
+    public void testinverseCotangent1() {
+        Scientific calculateinverseCotangent1 = new Scientific();
+        double actual = calculateinverseCotangent1.aTan(0.1);
+        assertEquals(0.09966865249116204, actual);
+    }
+
+    @Test
+    public void testinverseCotangent2() {
+        Scientific calculateinverseCotangent2 = new Scientific();
+        double actual = calculateinverseCotangent2.aTan(-0.325);
+        assertEquals(-0.3142318990843383, actual);
+    }
+
+    @Test
+    public void testinverseCotangent3() {
+        Scientific calculateinverseCotangent3 = new Scientific();
+        double actual = calculateinverseCotangent3.aTan(0.4567);
+        assertEquals(0.4284116595628546, actual);
+    }
+
+    //Test Logarithmic Functions
+    @Test
+    public void testLogarithm1() {
+        Scientific calculateLogarithm1 = new Scientific();
+        double actual = calculateLogarithm1.log(25);
+        assertEquals(3.2188758248682006, actual);
+    }
+
+    @Test
+    public void testLogarithm2() {
+        Scientific calculateLogarithm2 = new Scientific();
+        double actual = calculateLogarithm2.log(300);
+        assertEquals(5.703782474656201, actual);
+    }
+//
+    @Test
+    public void testLogarithm3() {
+        Scientific calculateLogarithm3 = new Scientific();
+        double actual = calculateLogarithm3.log(-300);
+        assertEquals(NaN, actual);
+    }
+
+    //Test Logarithm10
+    @Test
+    public void testLogarithm10a() {
+        Scientific calculateLogarithm10a = new Scientific();
+        double actual = calculateLogarithm10a.log10(25);
+        assertEquals(1.3979400086720377, actual);
+    }
+
+    @Test
+    public void testLogarithm10b() {
+        Scientific calculateLogarithm10b = new Scientific();
+        double actual = calculateLogarithm10b.log10(300);
+        assertEquals(2.4771212547196626, actual);
+    }
+
+    @Test
+    public void testLogarithm10c() {
+        Scientific calculateLogarithm10c = new Scientific();
+        double actual = calculateLogarithm10c.log10(-30);
+        assertEquals(NaN, actual);
+    }
+    //Test Natural Logarithm
+    @Test
+    public void testNaturalLogarithm1() {
+        Scientific calculateNaturalLogarithm1 = new Scientific();
+        double actual = calculateNaturalLogarithm1.log1p(20);
+        assertEquals(3.044522437723423, actual);
+    }
+
+    @Test
+    public void testNaturalLogarithm2() {
+        Scientific calculateNaturalLogarithm2 = new Scientific();
+        double actual = calculateNaturalLogarithm2.log1p(.35);
+        assertEquals(0.30010459245033805, actual);
+    }
+
+    @Test
+    public void testNaturalLogarithm3() {
+        Scientific calculateNaturalLogarithm3 = new Scientific();
+        double actual = calculateNaturalLogarithm3.log1p(-35);
+        assertEquals(NaN, actual);
+    }
+
+    //Test Inverse Natural Log
+    @Test
+    public void testInverseNaturalLogarithm1() {
+        Scientific calculateInverseNaturalLogarithm1 = new Scientific();
+        double actual = calculateInverseNaturalLogarithm1.log1p(20);
+        assertEquals(3.044522437723423, actual);
+    }
+
+//    @Test
+//    public void testInverseNaturalLogarithm2() {
+//        Scientific calculateInverseNaturalLogarithm2 = new Scientific();
+//        double actual = calculateInverseNaturalLogarithm2.log1p(.35);
+//        assertEquals(0.30010459245033805, actual);
+//    }
+//
+//    @Test
+//    public void testInverseNaturalLogarithm3() {
+//        Scientific calculateInverseNaturalLogarithm3 = new Scientific();
+//        double actual = calculateNaturalLogarithm3.log1p(-35);
+//        assertEquals(NaN, actual);
+//    }
 
 }
 
