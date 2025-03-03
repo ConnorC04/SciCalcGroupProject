@@ -39,7 +39,7 @@ public class MainApplication {
         while (runCalc){
             System.out.println("Would you like to use Basic calculator " +
                     "functions or Scientific calculator functions? Please enter \"B\" for Basic or " +
-                    "\"S\" for Scientific");
+                    "\"S\" for Scientific: ");
             // This String object is used to determine whether the user wants to use Basic or Scientific functions
             String userInput = scan.nextLine();
 
@@ -101,8 +101,9 @@ public class MainApplication {
                 }else{
                     if(userInput.equalsIgnoreCase("n")){
                         System.out.println("Are you done using the calculator? " +
-                                "Enter \"y\" if you are done." +
-                                "Enter any other key to continue.");
+                                "Enter \"y\" if you are done. " +
+                                "Enter any other key to continue. " +
+                                "Press enter twice to confirm selection. ");
                         userInput = scan.nextLine(); // userInput should still be safe... for now.
                         if (userInput.equalsIgnoreCase("y")){
                             runCalc = false;
@@ -146,7 +147,7 @@ public class MainApplication {
                                     boolean goToMode = science.isRadianMode(modeToGo);
                                     System.out.println("Please enter an angle (hint: keep this in the same type as " +
                                             "the mode you just selected): ");
-                                    firstNum = Double.parseDouble(userInput);
+                                    firstNum = Double.parseDouble(scan.nextLine());
                                     answer = science.switchUnitsMode(goToMode, science.sin(firstNum));
                                     System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
                             }
