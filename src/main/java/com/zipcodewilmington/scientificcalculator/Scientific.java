@@ -94,7 +94,7 @@ public class Scientific {
     }
 
     //Factorial
-    public static int fact(double num){
+    public static int factorial(double num){
         if (num < 0){
             System.out.println("Error: Number must be positive");
         }
