@@ -58,6 +58,91 @@ public class TestScientific {
         assertEquals(actual, double1);
     }
 
+    @Test
+    public void testsin1() {
+        Scientific calculatesine1 = new Scientific();
+        double actual = calculatesine1.sin(55);
+        assertEquals(-0.9997551733586199, actual);
+    }
+
+    @Test
+    public void testsin2() {
+        Scientific calculatesine2 = new Scientific();
+        double actual = calculatesine2.sin(333);
+        assertEquals(-0.008821166113885877, actual);
+    }
+
+    @Test
+    public void testsin3() {
+        Scientific calculatesine3 = new Scientific();
+        double actual = calculatesine3.sin(-3027);
+        assertEquals(0.9971528677168651, actual);
+    }
+
+    @Test
+    public void testcosine1() {
+        Scientific calculatecosine1 = new Scientific();
+        double actual = calculatecosine1.cos(63);
+        assertEquals(0.9858965815825497, actual);
+    }
+
+    @Test
+    public void testcosine2() {
+        Scientific calculatecosine2 = new Scientific();
+        double actual = calculatecosine2.cos(765);
+        assertEquals(0.022187030168153377, actual);
+    }
+
+    @Test
+    public void testcosine3() {
+        Scientific calculatecosine3 = new Scientific();
+        double actual = calculatecosine3.cos(-20);
+        assertEquals(0.40808206181339196, actual);
+    }
+
+    @Test
+    public void testtangent1() {
+        Scientific calculatetangent1 = new Scientific();
+        double actual = calculatetangent1.tan(63);
+        assertEquals(0.16974975208268753, actual);
+    }
+
+    @Test
+    public void testtangent2() {
+        Scientific calculatetangent2 = new Scientific();
+        double actual = calculatetangent2.tan(765);
+        assertEquals(-45.06028206439275, actual);
+    }
+
+    @Test
+    public void testtangent3() {
+        Scientific calculatetangent3 = new Scientific();
+        double actual = calculatetangent3.tan(-20);
+        assertEquals(-2.237160944224742, actual);
+    }
+
+    @Test
+    public void testinverseSine1() {
+        Scientific calculateinverseSine1 = new Scientific();
+        double actual = calculateinverseSine1.aSin(0.1);
+        assertEquals(0.1001674211615598, actual);
+    }
+
+    @Test
+    public void testinverseSine2() {
+        Scientific calculateinverseSine2 = new Scientific();
+        double actual = calculateinverseSine2.aSin(-0.325);
+        assertEquals(-0.3310117280892945, actual);
+    }
+
+    @Test
+    public void testinverseSine3() {
+        Scientific calculateinverseSine3 = new Scientific();
+        double actual = calculateinverseSine3.aSin(0.4567);
+        assertEquals(0.4742822055086542, actual);
+    }
+
+
 }
 
 
