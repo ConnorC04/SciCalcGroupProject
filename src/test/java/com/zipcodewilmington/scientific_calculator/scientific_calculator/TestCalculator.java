@@ -90,7 +90,7 @@ public class TestCalculator {
         @Test
         public void testDivisionError1() {
             Calculator calculateDivisionError1 = new Calculator();
-            Boolean actual = calculateDivisionError1.divisionError(2, 0);
+            Boolean actual = calculateDivisionError1.divisionError(0);
             assertEquals("Error: Cannot divide by 0!");
         }
 

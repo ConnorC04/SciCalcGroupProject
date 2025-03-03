@@ -21,12 +21,12 @@ import java.util.Scanner;
             return x / y;
         }
 
-        public static Boolean divisionError(double x, double y){
-             if (y == 0){
-                 return "Error: Cannot Divide by 0!";
+        public static Boolean divisionError(double y){
+             if (y == 0) {
+                 return true;
              }
              else {
-                 return ("" + (x / y));
+                 return false;
              }
         }
     }
