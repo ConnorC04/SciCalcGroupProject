@@ -254,24 +254,54 @@ public class TestScientific {
     @Test
     public void testInverseNaturalLogarithm1() {
         Scientific calculateInverseNaturalLogarithm1 = new Scientific();
-        double actual = calculateInverseNaturalLogarithm1.log1p(20);
+        double actual = calculateInverseNaturalLogarithm1.invLog1p(20);
         assertEquals(3.044522437723423, actual);
     }
 
-//    @Test
-//    public void testInverseNaturalLogarithm2() {
-//        Scientific calculateInverseNaturalLogarithm2 = new Scientific();
-//        double actual = calculateInverseNaturalLogarithm2.log1p(.35);
-//        assertEquals(0.30010459245033805, actual);
-//    }
-//
-//    @Test
-//    public void testInverseNaturalLogarithm3() {
-//        Scientific calculateInverseNaturalLogarithm3 = new Scientific();
-//        double actual = calculateNaturalLogarithm3.log1p(-35);
-//        assertEquals(NaN, actual);
-//    }
+    @Test
+    public void testInverseNaturalLogarithm2() {
+        Scientific calculateInverseNaturalLogarithm2 = new Scientific();
+        double actual = calculateInverseNaturalLogarithm2.invLog1p(.35);
+        assertEquals(1.35, actual);
+    }
 
+    @Test
+    public void testInverseNaturalLogarithm3() {
+        Scientific calculateInverseNaturalLogarithm3 = new Scientific();
+        double actual = calculateInverseNaturalLogarithm3.invLog1p(-35);
+        assertEquals(NaN, actual);
+    }
+
+    //Test Factorial
+    @Test
+    public void Factorial1() {
+        Scientific calculateFactorial1 = new Scientific();
+        double actual = calculateFactorial1.factorial(20);
+        assertEquals(-2.102132736E9, actual);
+    }
+
+    @Test
+    public void Factorial2() {
+        Scientific calculateFactorial2 = new Scientific();
+        double actual = calculateFactorial2.factorial(5);
+        assertEquals(120.0, actual);
+    }
+
+    @Test
+    /*System outputs 'Error: Number must be positive'. Answer it outputs is always '1.0'<---- Important
+    This happens when user inputs any negative number (TESTED WITH -7, -9 AND -10 AS INPUTS)*/
+    public void Factorial3() {
+        Scientific calculateFactorial3 = new Scientific();
+        double actual = calculateFactorial3.factorial(-10);
+        assertEquals(1.0, actual);
+    }
+
+    @Test
+    public void Factorial4() {
+        Scientific calculateFactorial4 = new Scientific();
+        double actual = calculateFactorial4.factorial(3.125);
+        assertEquals(6.0, actual);
+    }
 }
 
 
