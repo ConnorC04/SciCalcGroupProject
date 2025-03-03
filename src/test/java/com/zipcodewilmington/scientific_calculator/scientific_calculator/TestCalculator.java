@@ -21,32 +21,52 @@ public class TestCalculator {
 
         @Test
         public void testAddTwoNum3() {
-        Calculator calculateAddition3 = new Calculator();
-        double actual = calculateAddition3.addTwoNum(14.3565, 359.432819);
-        assertEquals(373.789319, actual, 0.0001);
+            Calculator calculateAddition3 = new Calculator();
+            double actual = calculateAddition3.addTwoNum(14.3565, 359.432819);
+            assertEquals(373.789319, actual, 0.0001);
         }
 
         @Test
         public void testSubtractTwoNum1() {
-        Calculator calculateSubtraction1 = new Calculator();
-        double actual = calculateSubtraction1.subtractTwoNum(9, 5);
-        assertEquals(4, actual, 0.0001);
+            Calculator calculateSubtraction1 = new Calculator();
+            double actual = calculateSubtraction1.subtractTwoNum(9, 5);
+            assertEquals(4, actual, 0.0001);
         }
 
         @Test
         public void testSubtractTwoNum2() {
-        Calculator calculateSubtraction2 = new Calculator();
-        double actual = calculateSubtraction2.subtractTwoNum(45.305, 16.89543);
-        assertEquals(28.40957, actual, 0.0001);
+            Calculator calculateSubtraction2 = new Calculator();
+            double actual = calculateSubtraction2.subtractTwoNum(45.305, 16.89543);
+            assertEquals(28.40957, actual, 0.0001);
         }
 
         @Test
         public void testSubtractTwoNum3() {
-        Calculator calculateSubtraction3 = new Calculator();
-        double actual = calculateSubtraction3.subtractTwoNum(794.47839210, 432.47832910);
-        assertEquals(362.000063, actual, 0.0001);
+            Calculator calculateSubtraction3 = new Calculator();
+            double actual = calculateSubtraction3.subtractTwoNum(794.47839210, 432.47832910);
+            assertEquals(362.000063, actual, 0.0001);
+        }
+        @Test
+        public void testMultiplyTwoNum1() {
+            Calculator calculateMultiplication1 = new Calculator();
+            double actual = calculateMultiplication1.multiplyTwoNum(8, 10);
+            assertEquals(80, actual, 0.0001);
+        }
+        @Test
+        public void testMultiplyTwoNum2() {
+            Calculator calculateMultiplication2 = new Calculator();
+            double actual = calculateMultiplication2.multiplyTwoNum(85, 95.3);
+            assertEquals(8100.5, actual, 0.0001);
+        }
+
+        @Test
+        public void testMultiplyTwoNum3() {
+            Calculator calculateMultiplication3 = new Calculator();
+            double actual = calculateMultiplication3.multiplyTwoNum(90.543, 1092.7632);
+            assertEquals(98942.0584176, actual, 0.0001);
+        }
     }
-    }
+
 
 
 
