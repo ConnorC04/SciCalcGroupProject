@@ -90,10 +90,16 @@ public class TestCalculator {
         @Test
         public void testDivisionError1() {
             Calculator calculateDivisionError1 = new Calculator();
-            Boolean actual = calculateDivisionError1.divisionError(0);
-            assertEquals("Error: Cannot divide by 0!");
+            boolean actual = calculateDivisionError1.divisionError(0);
+            assertEquals(true, actual);
         }
 
+    @Test
+        public void testDivisionError2() {
+            Calculator calculateDivisionError2 = new Calculator();
+            boolean actual = calculateDivisionError2.divisionError(2);
+            assertEquals(false, actual);
+        }
 }
 
 
