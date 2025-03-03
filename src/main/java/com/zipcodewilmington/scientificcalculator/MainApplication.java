@@ -221,31 +221,66 @@ public class MainApplication {
                                     System.out.println("Invalid selection. Smell ya later nerd");
                                     runCalc = false;
                             }
-                        case "2": // log
+                        case "2": // log(x)
                             System.out.println("Enter the number: ");
                             firstNum = Double.parseDouble(scan.nextLine());
                             answer = science.log(firstNum);
                             System.out.println("log" + firstNum + " = " + answer + ".");
                             break;
-                        case "3": // Inverse log
+                        case "3": // Inverse log(x)
                             System.out.println("Enter the number: ");
                             firstNum = Double.parseDouble(scan.nextLine());
                             answer = science.log10(firstNum);
                             System.out.println("Inverse log" + firstNum + " = " + answer + ".");
                             break;
-                        case "4": //
+                        case "4": // ln(x)
                             System.out.println("Enter the number: ");
                             firstNum = Double.parseDouble(scan.nextLine());
                             answer = science.log1p(firstNum);
                             System.out.println("ln" + firstNum + " = " + answer + ".");
                             break;
-                        case "5":
+                        case "5": // Inverse ln(x)
                             System.out.println("Enter the number: ");
                             firstNum = Double.parseDouble(scan.nextLine());
                             answer = science.invLog1p(firstNum);
                             System.out.println("Inverse ln" + firstNum + " = " + answer + ".");
                             break;
+                        case "6": // (x)!
+                            System.out.println("Enter the number: ");
+                            firstNum = Double.parseDouble(scan.nextLine());
+                            answer = science.factorial(firstNum);
+                            System.out.println(firstNum + "! = " + answer + ".");
+                            break;
+                        case "7":
+                            science.displayStoredValue(answer);
+                            break;
+                        case "8":
+                            science.clearStoredValue(answer);
+                            break;
+                        default:
+                            System.out.println("Stop trying to break this it's getting annoying.");
+                            runCalc = false;
                     }
+                    System.out.println("Would you like to store this answer to memory? It can be used for later calculations. " +
+                            "Please enter \"y\" to store the answer to memory, or \"n\" if you do not wish to store this answer.");
+                    userInput = scan.nextLine(); // This is only executed inside this branch, userInput is safe... for now.
+                    if (userInput.equalsIgnoreCase("y")){
+                        science.storeCurrentValue(answer);
+                    }else{
+                        if(userInput.equalsIgnoreCase("n")){
+                            System.out.println("Are you done using the calculator? " +
+                                    "Enter \"y\" if you are done. " +
+                                    "Enter any other key to continue. " +
+                                    "Press enter twice to confirm selection. ");
+                            userInput = scan.nextLine(); // userInput should still be safe... for now.
+                            if (userInput.equalsIgnoreCase("y")){
+                                runCalc = false;
+                            }
+                        }else{
+                            System.out.println("Oops! Looks like you can't read. I'm getting sick of error handling."); // breaking the fourth wall
+                            runCalc = false;
+                        }
+                        }
 
                 }else{
                     if (userInput.equalsIgnoreCase("quit")){
