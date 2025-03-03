@@ -44,7 +44,7 @@ public class MainApplication {
             String userInput = scan.nextLine();
 
             if (userInput.equalsIgnoreCase("B")){
-                System.out.println("Please select which function you would like to use. " +
+                System.out.println("Please select which function you would like to use. \n" +
                         "To select a function, please input the number next to the function in " +
                         "the following list: \n");
                 System.out.println("1: Addition\n" +
@@ -114,25 +114,43 @@ public class MainApplication {
                 }
             }else{ // Opens scientific functions
                 if (userInput.equalsIgnoreCase("S")){
-                    System.out.println("Please select which Scientific function you would like to use. " +
+                    System.out.println("Please select which Scientific function you would like to use. \n" +
                             "To select a function, please input the number next to the function in " +
                             "the following list: \n");
-                    System.out.println("1: Switch mode (Degrees or Radians)\n" +
-                            "2: sin\n" +
-                            "3: cos(x)\n" +
-                            "4: tan(x)\n" +
-                            "5: arcsin(x)\n" +
-                            "6: arccos(x)\n" +
-                            "7: arctan(x)\n" +
-                            "8: log(x)\n" +
-                            "9: inverse log(x)\n" +
-                            "10: ln(x)\n" +
-                            "11: inverse ln(x)\n" +
-                            "12: (x)!\n" +
-                            "13: Display stored value (If no value has been stored, default is 0)\n" +
-                            "14: Clear stored value (Defaults to 0)\n");
+                    System.out.println("1: Trig Functions\n" +
+                            "2: log(x)\n" +
+                            "3: inverse log(x)\n" +
+                            "4: ln(x)\n" +
+                            "5: inverse ln(x)\n" +
+                            "6: (x)!\n" +
+                            "7: Display stored value (If no value has been stored, default is 0)\n" +
+                            "8: Clear stored value (Defaults to 0)\n");
                     userInput = scan.nextLine(); // we meet again, old friend.
-
+                    switch (userInput){
+                        case "1":
+                            System.out.println("Which trig function would you like to use? \n" +
+                                    "To select a trig function, please enter a number from the following list: \n");
+                            System.out.println("1: sin(x)\n" +
+                                    "2: cos(x)\n" +
+                                    "3: tan(x)\n" +
+                                    "4: arcsin(x)\n" +
+                                    "5: arccos(x)\n" +
+                                    "6: arctan(x)\n");
+                            userInput = scan.nextLine();
+                            switch (userInput){
+                                case "1":
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    String modeToGo = science.modeInput(scan.nextLine());
+                                    boolean goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(userInput);
+                                    answer = science.switchUnitsMode(goToMode, science.sin(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                            }
+                    }
 
                 }else{
                     if (userInput.equalsIgnoreCase("quit")){
