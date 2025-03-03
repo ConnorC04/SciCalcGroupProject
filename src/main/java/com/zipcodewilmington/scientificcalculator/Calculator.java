@@ -21,7 +21,7 @@ import java.util.Scanner;
             return x / y;
         }
 
-        public static Boolean divisionError(double y){
+        public static boolean divisionError(double y){
              if (y == 0) {
                  return true;
              }
