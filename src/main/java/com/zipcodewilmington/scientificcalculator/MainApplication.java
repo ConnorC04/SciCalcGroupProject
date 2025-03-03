@@ -12,6 +12,9 @@ public class MainApplication {
         // This boolean will be used to loop the calculator's use until the user has finished.
         boolean runCalc = true;
 
+        // This double will be used to store the answer to memory if the user wishes
+        double answer = 0.0;
+
         // This Calculator object will be used if the user selects the Basic Calculator functions
         Calculator calc = new Calculator();
 
@@ -55,6 +58,7 @@ public class MainApplication {
                         firstNum = Double.parseDouble(scan.nextLine());
                         System.out.println("Please enter the second number you would like to add :");
                         secondNum = Double.parseDouble(scan.nextLine());
+                        answer = calc.addTwoNum(firstNum, secondNum);
                         System.out.println("The result of " + firstNum + " + " + secondNum + " is " + calc.addTwoNum(firstNum, secondNum));
                         break;
                     case "2":
@@ -62,6 +66,7 @@ public class MainApplication {
                         firstNum = Double.parseDouble(scan.nextLine());
                         System.out.println("Please enter the second number you would like to subtract: ");
                         secondNum = Double.parseDouble(scan.nextLine());
+                        answer = calc.subtractTwoNum(firstNum, secondNum);
                         System.out.println("The result of " + firstNum + " - " + secondNum + " is " + calc.subtractTwoNum(firstNum, secondNum));
                         break;
                     case "3":
@@ -69,6 +74,7 @@ public class MainApplication {
                         firstNum = Double.parseDouble(scan.nextLine());
                         System.out.println("Please enter the second number you would like to multiply: ");
                         secondNum = Double.parseDouble(scan.nextLine());
+                        answer = calc.multiplyTwoNum(firstNum, secondNum);
                         System.out.println("The result of " + firstNum + " * " + secondNum + " is " + calc.multiplyTwoNum(firstNum, secondNum));
                         break;
                     case "4":
@@ -76,21 +82,58 @@ public class MainApplication {
                         firstNum = Double.parseDouble(scan.nextLine());
                         System.out.println("Please enter the divisor (the number you want to divide by): ");
                         secondNum = Double.parseDouble(scan.nextLine());
-//                        if(divisionError(secondNum)) {
-//                            System.out.println("Oops! Cannot divide by zero. Please try again.");
-//                            runCalc = false;
-//                        }
+                        if(calc.divisionError(secondNum)) {
+                            System.out.println("Oops! Cannot divide by zero. Please try again.");
+                            runCalc = false;
+                        }
+                        answer = calc.divideTwoNum(firstNum, secondNum);
                         System.out.println("The result of " + firstNum + " / " + secondNum + " is " + calc.divideTwoNum(firstNum, secondNum));
                         break;
                     default:
                         System.out.println("Oops! I don't recognize that command. Please try again.");
                         runCalc = false;
                 }
+                System.out.println("Would you like to store this answer to memory? It can be used for later calculations. " +
+                        "Please enter \"y\" to store the answer to memory, or \"n\" if you do not wish to store this answer.");
+                userInput = scan.nextLine(); // This is only executed inside this branch, userInput is safe... for now.
+                if (userInput.equalsIgnoreCase("y")){
+                    science.storeCurrentValue(answer);
+                }else{
+                    if(userInput.equalsIgnoreCase("n")){
+                        System.out.println("Are you done using the calculator? " +
+                                "Enter \"y\" if you are done." +
+                                "Enter any other key to continue.");
+                        userInput = scan.nextLine(); // userInput should still be safe... for now.
+                        if (userInput.equalsIgnoreCase("y")){
+                            runCalc = false;
+                        }
+                    }else{
+                        System.out.println("Oops! Looks like you can't read. I'm getting sick of error handling."); // breaking the fourth wall
+                        runCalc = false;
+                    }
+                }
             }else{ // Opens scientific functions
                 if (userInput.equalsIgnoreCase("S")){
                     System.out.println("Please select which Scientific function you would like to use. " +
                             "To select a function, please input the number next to the function in " +
                             "the following list: \n");
+                    System.out.println("1: Switch mode (Degrees or Radians)\n" +
+                            "2: sin\n" +
+                            "3: cos(x)\n" +
+                            "4: tan(x)\n" +
+                            "5: arcsin(x)\n" +
+                            "6: arccos(x)\n" +
+                            "7: arctan(x)\n" +
+                            "8: log(x)\n" +
+                            "9: inverse log(x)\n" +
+                            "10: ln(x)\n" +
+                            "11: inverse ln(x)\n" +
+                            "12: (x)!\n" +
+                            "13: Display stored value (If no value has been stored, default is 0)\n" +
+                            "14: Clear stored value (Defaults to 0)\n");
+                    userInput = scan.nextLine(); // we meet again, old friend.
+
+
                 }else{
                     if (userInput.equalsIgnoreCase("quit")){
                         runCalc = false;
