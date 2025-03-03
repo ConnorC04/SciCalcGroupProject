@@ -17,14 +17,17 @@ import java.util.Scanner;
             return (x * y);
         }
 
-        public static String divideTwoNum(double x, double y){
-            if (y == 0){
-                return ("Error: Cannot Divide by 0");
-            }
-            else {
-                double answer = x / y;
-                return ("" + answer);
-            }
+        public static double divideTwoNum(double x, double y){
+            return x / y;
+        }
+
+        public static Boolean divisionError(double x, double y){
+             if (y == 0){
+                 return "Error: Cannot Divide by 0!";
+             }
+             else {
+                 return ("" + (x / y));
+             }
         }
     }
 
