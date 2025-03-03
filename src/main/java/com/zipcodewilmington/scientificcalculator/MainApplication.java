@@ -1,9 +1,11 @@
 package com.zipcodewilmington.scientificcalculator;
 
-/**
+ /*
  * Created by leon on 2/9/18.
  */
 import java.util.Scanner;
+import java.util.function.DoublePredicate;
+
 public class MainApplication {
     public static void main(String[] args) {
 
@@ -46,6 +48,7 @@ public class MainApplication {
                         "2: Subtraction\n" +
                         "3: Multiplication\n" +
                         "4: Division\n");
+                userInput = scan.nextLine();
                 switch (userInput){
                     case "1":
                         System.out.println("Please enter the first number you would like to add: ");
@@ -53,15 +56,47 @@ public class MainApplication {
                         System.out.println("Please enter the second number you would like to add :");
                         secondNum = Double.parseDouble(scan.nextLine());
                         System.out.println("The result of " + firstNum + " + " + secondNum + " is " + calc.addTwoNum(firstNum, secondNum));
+                        break;
+                    case "2":
+                        System.out.println("Please enter the first number you would like to subtract: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("Please enter the second number you would like to subtract: ");
+                        secondNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("The result of " + firstNum + " - " + secondNum + " is " + calc.subtractTwoNum(firstNum, secondNum));
+                        break;
+                    case "3":
+                        System.out.println("Please enter the first number you would like to multiply: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("Please enter the second number you would like to multiply: ");
+                        secondNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("The result of " + firstNum + " * " + secondNum + " is " + calc.multiplyTwoNum(firstNum, secondNum));
+                        break;
+                    case "4":
+                        System.out.println("Please enter the dividend (the number you want to divide): ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("Please enter the divisor (the number you want to divide by): ");
+                        secondNum = Double.parseDouble(scan.nextLine());
+//                        if(divisionError(secondNum)) {
+//                            System.out.println("Oops! Cannot divide by zero. Please try again.");
+//                            runCalc = false;
+//                        }
+                        System.out.println("The result of " + firstNum + " / " + secondNum + " is " + calc.divideTwoNum(firstNum, secondNum));
+                        break;
+                    default:
+                        System.out.println("Oops! I don't recognize that command. Please try again.");
+                        runCalc = false;
                 }
             }else{ // Opens scientific functions
                 if (userInput.equalsIgnoreCase("S")){
-
+                    System.out.println("Please select which Scientific function you would like to use. " +
+                            "To select a function, please input the number next to the function in " +
+                            "the following list: \n");
                 }else{
                     if (userInput.equalsIgnoreCase("quit")){
                         runCalc = false;
                     }else{
                         System.out.println("Oops! I don't recognize that command. Please try again.");
+                        runCalc = false;
                     }
                 }
 
