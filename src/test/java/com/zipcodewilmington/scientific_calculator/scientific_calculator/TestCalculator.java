@@ -6,7 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestCalculator {
 
-        @Test
+
+
+    @Test
         public void testAddTwoNum1() {
             Calculator calculateAddition1 = new Calculator();
             double actual = calculateAddition1.addTwoNum(3, 5);
@@ -100,6 +102,104 @@ public class TestCalculator {
             boolean actual = calculateDivisionError2.divisionError(2);
             assertEquals(false, actual);
         }
+
+    @Test
+        public void testSquare1() {
+            Calculator calculateSquare1 = new Calculator();
+            double actual = calculateSquare1.square(10);
+            assertEquals(100, actual, 0.000001);
+    }
+
+    @Test
+        public void testSquare2() {
+            Calculator calculateSquare2 = new Calculator();
+            double actual = calculateSquare2.square(25);
+            assertEquals(625, actual, 0.000001);
+        }
+
+    @Test
+    public void testSquare3() {
+        Calculator calculateSquare3 = new Calculator();
+        double actual = calculateSquare3.square(-9);
+        assertEquals(81, actual, 0.000001);
+    }
+
+    @Test
+    public void testSquareRoot1() {
+        Calculator calculateSquareRoot1 = new Calculator();
+        double actual = calculateSquareRoot1.squareRoot(16);
+        assertEquals(4, actual, 0.000001);
+    }
+
+    @Test
+    public void testSquareRoot2() {
+        Calculator calculateSquareRoot2 = new Calculator();
+        double actual = calculateSquareRoot2.squareRoot(81);
+        assertEquals(9, actual, 0.000001);
+    }
+
+    @Test
+    public void testSquareRoot3() {
+        Calculator calculateSquareRoot3 = new Calculator();
+        double actual = calculateSquareRoot3.squareRoot(125);
+        assertEquals(11.1803398875, actual, 0.000001);
+    }
+
+    @Test
+    public void testSquareExpoentiation1() {
+        Calculator calculatequareExpoentiation1 = new Calculator();
+        double actual = calculatequareExpoentiation1.squareExponent(4, 3);
+        assertEquals(64, actual, 0.000001);
+    }
+
+    @Test
+    public void testSquareExpoentiation2() {
+        Calculator calculatequareExpoentiation2 = new Calculator();
+        double actual = calculatequareExpoentiation2.squareExponent(7, 2);
+        assertEquals(49, actual, 0.0001);
+    }
+
+    @Test
+    public void testSquareExpoentiation3() {
+        Calculator calculatequareExpoentiation3 = new Calculator();
+        double actual = calculatequareExpoentiation3.squareExponent(-7, 4);
+        assertEquals(2401, actual, 0.0001);
+    }
+
+    @Test
+    public void testSquareExpoentiation4() {
+        Calculator calculatequareExpoentiation4 = new Calculator();
+        double actual = calculatequareExpoentiation4.squareExponent(7, -4);
+        assertEquals(4.1649312786339027E-4, actual, 0.0001);
+    }
+
+    @Test
+    public void testInverseFunction1() {
+        Calculator calculateInverseFunction1 = new Calculator();
+        double actual = calculateInverseFunction1.inverseOfInput(3);
+        assertEquals(0.3333333333333333, actual, 0.000001);
+    }
+
+    @Test
+    public void testInverseFunction2() {
+        Calculator calculateInverseFunction2 = new Calculator();
+        double actual = calculateInverseFunction2.inverseOfInput(-3);
+        assertEquals(-0.3333333333333333, actual, 0.000001);
+    }
+
+//    @Test
+//    public void testInverseFunction3() {
+//        Calculator calculateInverseFunction3 = new Calculator();
+//        double actual = calculateInverseFunction3.inverseOfInput(0);
+//        assertEquals(Infinity, actual, 0.000001);
+//    }
+
+    @Test
+    public void testInverseFunction4() {
+        Calculator calculateInverseFunction4 = new Calculator();
+        double actual = calculateInverseFunction4.inverseOfInput(5);
+        assertEquals(0.20, actual, 0.000001);
+    }
 }
 
 
