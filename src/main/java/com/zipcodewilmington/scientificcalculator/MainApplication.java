@@ -12,6 +12,12 @@ public class MainApplication {
         // This boolean will be used to loop the calculator's use until the user has finished.
         boolean runCalc = true;
 
+        // This boolean will be used for changing from radians to degrees mode
+        boolean goToMode = true;
+
+        // This string will also be used for changing modes
+        String modeToGo = "";
+
         // This double will be used to store the answer to memory if the user wishes
         double answer = 0.0;
 
@@ -128,7 +134,7 @@ public class MainApplication {
                             "8: Clear stored value (Defaults to 0)\n");
                     userInput = scan.nextLine(); // we meet again, old friend.
                     switch (userInput){
-                        case "1":
+                        case "1": // Enters the trig function menu
                             System.out.println("Which trig function would you like to use? \n" +
                                     "To select a trig function, please enter a number from the following list: \n");
                             System.out.println("1: sin(x)\n" +
@@ -139,18 +145,106 @@ public class MainApplication {
                                     "6: arctan(x)\n");
                             userInput = scan.nextLine();
                             switch (userInput){
-                                case "1":
+                                case "1": // sin(x)
                                     System.out.println("Please enter the mode for the solution\n" +
                                             "For radians, enter \"radians\"\n" +
                                             "For degrees, enter \"degrees\": ");
-                                    String modeToGo = science.modeInput(scan.nextLine());
-                                    boolean goToMode = science.isRadianMode(modeToGo);
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
                                     System.out.println("Please enter an angle (hint: keep this in the same type as " +
                                             "the mode you just selected): ");
                                     firstNum = Double.parseDouble(scan.nextLine());
                                     answer = science.switchUnitsMode(goToMode, science.sin(firstNum));
                                     System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                case "2": // cos(x)
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(scan.nextLine());
+                                    answer = science.switchUnitsMode(goToMode, science.cos(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                case "3": // tan(x)
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(scan.nextLine());
+                                    answer = science.switchUnitsMode(goToMode, science.tan(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                case "4": // arcSin(x)
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(scan.nextLine());
+                                    answer = science.switchUnitsMode(goToMode, science.aSin(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                case "5": // arcCos(x)
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(scan.nextLine());
+                                    answer = science.switchUnitsMode(goToMode, science.aCos(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                case "6": // arcTan(x)
+                                    System.out.println("Please enter the mode for the solution\n" +
+                                            "For radians, enter \"radians\"\n" +
+                                            "For degrees, enter \"degrees\": ");
+                                    modeToGo = science.modeInput(scan.nextLine());
+                                    goToMode = science.isRadianMode(modeToGo);
+                                    System.out.println("Please enter an angle (hint: keep this in the same type as " +
+                                            "the mode you just selected): ");
+                                    firstNum = Double.parseDouble(scan.nextLine());
+                                    answer = science.switchUnitsMode(goToMode, science.aTan(firstNum));
+                                    System.out.println("The sin of angle " + firstNum + " in " + modeToGo + " = " + answer);
+                                    break;
+                                default: // Dummy user inputs wrong thing
+                                    System.out.println("Invalid selection. Smell ya later nerd");
+                                    runCalc = false;
                             }
+                        case "2": // log
+                            System.out.println("Enter the number: ");
+                            firstNum = Double.parseDouble(scan.nextLine());
+                            answer = science.log(firstNum);
+                            System.out.println("log" + firstNum + " = " + answer + ".");
+                            break;
+                        case "3": // Inverse log
+                            System.out.println("Enter the number: ");
+                            firstNum = Double.parseDouble(scan.nextLine());
+                            answer = science.log10(firstNum);
+                            System.out.println("Inverse log" + firstNum + " = " + answer + ".");
+                            break;
+                        case "4": //
+                            System.out.println("Enter the number: ");
+                            firstNum = Double.parseDouble(scan.nextLine());
+                            answer = science.log1p(firstNum);
+                            System.out.println("ln" + firstNum + " = " + answer + ".");
+                            break;
+                        case "5":
+                            System.out.println("Enter the number: ");
+                            firstNum = Double.parseDouble(scan.nextLine());
+                            answer = science.invLog1p(firstNum);
+                            System.out.println("Inverse ln" + firstNum + " = " + answer + ".");
+                            break;
                     }
 
                 }else{
