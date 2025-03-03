@@ -65,7 +65,36 @@ public class TestCalculator {
             double actual = calculateMultiplication3.multiplyTwoNum(90.543, 1092.7632);
             assertEquals(98942.0584176, actual, 0.0001);
         }
-    }
+
+        @Test
+        public void testDivideTwoNum1() {
+            Calculator calculateDivision1 = new Calculator();
+            double actual = calculateDivision1.divideTwoNum(20, 4);
+            assertEquals(5, actual, 0.0001);
+        }
+
+        @Test
+        public void testDivideTwoNum2() {
+            Calculator calculateDivision2 = new Calculator();
+            double actual = calculateDivision2.divideTwoNum(800, 10);
+            assertEquals(80, actual, 0.0001);
+        }
+
+        @Test
+        public void testDivideTwoNum3() {
+            Calculator calculateDivision3 = new Calculator();
+            double actual = calculateDivision3.divideTwoNum(18, 2.7);
+            assertEquals(6.66666666667, actual, 0.0001);
+        }
+
+        @Test
+        public void testDivisionError1() {
+            Calculator calculateDivisionError1 = new Calculator();
+            Boolean actual = calculateDivisionError1.divisionError(2, 0);
+            assertEquals("Error: Cannot divide by 0!");
+        }
+
+}
 
 
 
