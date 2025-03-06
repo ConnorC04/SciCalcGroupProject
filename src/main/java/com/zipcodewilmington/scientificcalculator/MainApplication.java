@@ -128,7 +128,7 @@ public class MainApplication {
                 }
                 System.out.println("Would you like to store this answer to memory? It can be used for later calculations. " +
                         "Please enter \"y\" to store the answer to memory, or \"n\" if you do not wish to store this answer.");
-                userInput = scan.nextLine(); // This is only executed inside this branch, userInput is safe... for now.
+                userInput = scan.next(); // This is only executed inside this branch, userInput is safe... for now.
                 if (userInput.equalsIgnoreCase("y")){
                     science.storeCurrentValue(answer);
                 }else{
@@ -137,7 +137,7 @@ public class MainApplication {
                                 "Enter \"y\" if you are done. " +
                                 "Enter any other key to continue. " +
                                 "Press enter twice to confirm selection. ");
-                        userInput = scan.nextLine(); // userInput should still be safe... for now.
+                        userInput = scan.next(); // userInput should still be safe... for now.
                         if (userInput.equalsIgnoreCase("y")){
                             runCalc = false;
                         }
@@ -290,7 +290,7 @@ public class MainApplication {
                     }
                     System.out.println("Would you like to store this answer to memory? It can be used for later calculations. " +
                             "Please enter \"y\" to store the answer to memory, or \"n\" if you do not wish to store this answer.");
-                    userInput = scan.nextLine(); // This is only executed inside this branch, userInput is safe... for now.
+                    userInput = scan.next(); // This is only executed inside this branch, userInput is safe... for now.
                     if (userInput.equalsIgnoreCase("y")){
                         science.storeCurrentValue(answer);
                     }else{
@@ -299,7 +299,7 @@ public class MainApplication {
                                     "Enter \"y\" if you are done. " +
                                     "Enter any other key to continue. " +
                                     "Press enter twice to confirm selection. ");
-                            userInput = scan.nextLine(); // userInput should still be safe... for now.
+                            userInput = scan.next(); // userInput should still be safe... for now.
                             if (userInput.equalsIgnoreCase("y")){
                                 runCalc = false;
                             }
