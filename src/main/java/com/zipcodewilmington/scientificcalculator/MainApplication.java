@@ -52,11 +52,15 @@ public class MainApplication {
             if (userInput.equalsIgnoreCase("B")){
                 System.out.println("Please select which function you would like to use. \n" +
                         "To select a function, please input the number next to the function in " +
-                        "the following list: \n");
-                System.out.println("1: Addition\n" +
-                        "2: Subtraction\n" +
-                        "3: Multiplication\n" +
-                        "4: Division\n");
+                        "the following list: ");
+                System.out.println("1: Addition, " +
+                        "2: Subtraction, " +
+                        "3: Multiplication, " +
+                        "4: Division, " +
+                        "5: Square, " +
+                        "6: Square Root, " +
+                        "7: Exponential, " +
+                        "8: Inverse. ");
                 userInput = scan.nextLine();
                 switch (userInput){
                     case "1":
@@ -95,6 +99,29 @@ public class MainApplication {
                         answer = calc.divideTwoNum(firstNum, secondNum);
                         System.out.println("The result of " + firstNum + " / " + secondNum + " is " + calc.divideTwoNum(firstNum, secondNum));
                         break;
+                    case "5":
+                        System.out.println("Please enter the the number you want to square: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("The result of " + firstNum + " squared is " + calc.square(firstNum));
+                        break;
+                    case "6":
+                        System.out.println("Please enter the the number you want the square root of: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("The result of the square root of " + firstNum + " is " + calc.squareRoot(firstNum));
+                        break;
+                    case "7":
+                        System.out.println("Please enter the first number as your base: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("Please enter the second number as your exponent: ");
+                        secondNum = Double.parseDouble(scan.nextLine());
+                        answer = calc.squareExponent(firstNum, secondNum);
+                        System.out.println("The result of " + firstNum + " to the power of " + secondNum + " is " + calc.squareExponent(firstNum, secondNum));
+                        break;
+                    case "8":
+                        System.out.println("Please enter the the number you want the inverse of: ");
+                        firstNum = Double.parseDouble(scan.nextLine());
+                        System.out.println("The result of the inverse of " + firstNum + " is " + calc.inverseOfInput(firstNum));
+                        break;
                     default:
                         System.out.println("Oops! I don't recognize that command. Please try again.");
                         runCalc = false;
@@ -123,26 +150,26 @@ public class MainApplication {
                 if (userInput.equalsIgnoreCase("S")){
                     System.out.println("Please select which Scientific function you would like to use. \n" +
                             "To select a function, please input the number next to the function in " +
-                            "the following list: \n");
-                    System.out.println("1: Trig Functions\n" +
-                            "2: log(x)\n" +
-                            "3: inverse log(x)\n" +
-                            "4: ln(x)\n" +
-                            "5: inverse ln(x)\n" +
-                            "6: (x)!\n" +
-                            "7: Display stored value (If no value has been stored, default is 0)\n" +
-                            "8: Clear stored value (Defaults to 0)\n");
+                            "the following list: ");
+                    System.out.println("1: Trig Functions, " +
+                            "2: log(x), " +
+                            "3: inverse log(x), " +
+                            "4: ln(x), " +
+                            "5: inverse ln(x), " +
+                            "6: (x)!, " +
+                            "7: Display stored value (If no value has been stored, default is 0), " +
+                            "8: Clear stored value (Defaults to 0): ");
                     userInput = scan.nextLine(); // we meet again, old friend.
                     switch (userInput){
                         case "1": // Enters the trig function menu
                             System.out.println("Which trig function would you like to use? \n" +
                                     "To select a trig function, please enter a number from the following list: \n");
-                            System.out.println("1: sin(x)\n" +
-                                    "2: cos(x)\n" +
-                                    "3: tan(x)\n" +
-                                    "4: arcsin(x)\n" +
-                                    "5: arccos(x)\n" +
-                                    "6: arctan(x)\n");
+                            System.out.println("1: sin(x), " +
+                                    "2: cos(x), " +
+                                    "3: tan(x), " +
+                                    "4: arcsin(x), " +
+                                    "5: arccos(x), " +
+                                    "6: arctan(x): ");
                             userInput = scan.nextLine();
                             switch (userInput){
                                 case "1": // sin(x)
